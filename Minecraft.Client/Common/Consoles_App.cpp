@@ -6599,13 +6599,12 @@ wstring CMinecraftApp::FormatHTMLString(int iPad, const wstring &desc, int shado
 //found list of html escapes at https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-in-html
 wstring CMinecraftApp::EscapeHTMLString(const wstring& desc)
 {
-	static std::unordered_map<wchar_t, wchar_t*> replacementMap = {
-		{L'&', L"&amp;"},
-		{L'<', L"&lt;"},
-		{L'>', L"&gt;"},
-		{L'\"', L"&quot;"},
-		{L'\'', L"&#39;"},
-	};
+    static std::unordered_map<wchar_t, wchar_t*> replacementMap = {
+        {L'&', L"&amp;"},
+        {L'<', L"&lt;"},
+        {L'>', L"&gt;"},
+        {L'\"', L"&quot;"},
+    };
 
 	wstring finalString = L"";
 	for (int i = 0; i < desc.size(); i++) {
