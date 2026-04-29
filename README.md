@@ -3,13 +3,6 @@
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/dH8AZWGcau)
 
----
-## IMPORTANT UPDATE
-**This repo was moved to a new org!** 
-
-Please change all links and references from `smartcmd/MinecraftConsoles` to `MCLCE/MinecraftConsoles` instead.
-
----
 
 This project is based on source code of Minecraft Legacy Console Edition v1.6.0560.0 (TU19) with some fixes and improvements applied. 
 
@@ -213,7 +206,8 @@ Persistent files are bind-mounted to host:
 ## Build & Run
 
 1. Install [Visual Studio 2022](https://aka.ms/vs/17/release/vs_community.exe) or [newer](https://visualstudio.microsoft.com/downloads/).
-2. Clone the repository.
+2. Clone the repository with submodules. If you don't, you will get a build error!
+    - `git clone --recurse-submodules https://github.com/MCLCE/MinecraftConsoles.git` 
 3. Open the project folder from Visual Studio.
 4. Set the build configuration to **Windows64 - Debug** (Release is also ok but missing some debug features), then build and run.
 
