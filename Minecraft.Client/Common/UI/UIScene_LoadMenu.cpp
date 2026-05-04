@@ -53,7 +53,6 @@ int UIScene_LoadMenu::LoadSaveDataThumbnailReturned(LPVOID lpParam,PBYTE pbThumb
 			app.DebugPrintf("Thumbnail data is nullptr, or has size 0\n");
 			pClass->m_bThumbnailGetFailed = true;
 		}
-		pClass->m_bRetrievingSaveThumbnail = false;
 	}
 
 	return 0;
@@ -100,7 +99,6 @@ UIScene_LoadMenu::UIScene_LoadMenu(int iPad, void *initData, UILayer *parentLaye
 	m_bIsSaveOwner = true;
 
 	m_bSaveThumbnailReady = false;
-	m_bRetrievingSaveThumbnail = true;
 	m_bShowTimer = false;
 	m_pDLCPack = nullptr;
 	m_bAvailableTexturePacksChecked=false;
@@ -274,9 +272,9 @@ UIScene_LoadMenu::UIScene_LoadMenu(int iPad, void *initData, UILayer *parentLaye
 				m_bitmapIcon.setTextureName(wFilename);
 				m_pbThumbnailData = params->saveDetails->pbThumbnailData;
 				m_uiThumbnailSize = params->saveDetails->dwThumbnailSize;
+				m_bSaveThumbnailReady = true;
 			}
 
-			m_bRetrievingSaveThumbnail = false;
 		}
 #endif
 	}
